@@ -145,3 +145,4 @@ rmse on valid set: 0.9860, mae:0.7572
 rmse on test set: 0.9870, mae:0.7606 
 [6,     0] loss: 0.007, The best rmse/mae: 0.985973 / 0.757242
 [6,   100] loss: 0.777, The best rmse/mae: 0.985973 / 0.757242
+[6,   200] loss: 0.818, The best rmse/mae: 0.985973 / 0.757242
