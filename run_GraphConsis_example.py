@@ -27,7 +27,7 @@ def train(model, device, train_loader, optimizer, epoch, best_rmse, best_mae):
         batch_nodes_u, batch_nodes_v, labels_list = data
         optimizer.zero_grad()
         loss = model.loss(batch_nodes_u.to(device), batch_nodes_v.to(device), labels_list.to(device))
-        loss.backward(retain_graph=True)
+        loss.backward()
         optimizer.step()
         running_loss += loss.item()
         if i % 100 == 0:
@@ -116,7 +116,7 @@ def main():
 
     # model
     graphconsis = GraphConsis(node_enc, r2e).to(device)
-    optimizer = torch.optim.Adam(graphconsis.parameters(), lr=args.lr)
+    optimizer = torch.optim.Adam(graphconsis.parameters(), lr=args.lr, weight_decay = 0.0001)
 
     # load from checkpoint
     if args.load_from_checkpoint == True:

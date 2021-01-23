@@ -8,15 +8,15 @@ class GraphConsis(nn.Module):
         super(GraphConsis, self).__init__()
         self.node_enc = node_enc
         self.embed_dim = node_enc.embed_dim
-        self.w1 = nn.Linear(2 * self.embed_dim, self.embed_dim)
-        self.w2 = nn.Linear(self.embed_dim, 32)
-        self.w3 = nn.Linear(32, 16)
-        self.w4 = nn.Linear(16, 1)
+        # self.w1 = nn.Linear(2 * self.embed_dim, self.embed_dim)
+        # self.w2 = nn.Linear(self.embed_dim, 32)
+        # self.w3 = nn.Linear(32, 16)
+        # self.w4 = nn.Linear(16, 1)
 
-        self.r2e = r2e
-        self.bn1 = nn.BatchNorm1d(self.embed_dim)
-        self.bn2 = nn.BatchNorm1d(32)
-        self.bn3 = nn.BatchNorm1d(16)
+        # self.r2e = r2e
+        # self.bn1 = nn.BatchNorm1d(self.embed_dim)
+        # self.bn2 = nn.BatchNorm1d(32)
+        # self.bn3 = nn.BatchNorm1d(16)
         self.criterion = nn.MSELoss()
 
     def forward(self, nodes_u, nodes_v):
